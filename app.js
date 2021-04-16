@@ -6,12 +6,12 @@ var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
-f
+
 $(document).ready(function() {
 	context = canvas.getContext("2d");
 	Start();
 });
-
+check;
 function Start() {
 	board = new Array();
 	score = 0;
