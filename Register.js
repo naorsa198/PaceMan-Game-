@@ -6,9 +6,9 @@ $( function() {
         name = $( "#name" ),
         email = $( "#email" ),
         password = $( "#password" ),
-        data =$("#data");
+        data =$("#form-date");
         Username=$("#Username");
-        allFields = $( [] ).add( name ).add( email ).add( password ).add(data).add(Username)
+        allFields = $( [] ).add( name ).add( email ).add( password ).add(form-date).add(Username)
         tips = $( ".validateTips" );
 
     function updateTips( t ) {
