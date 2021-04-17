@@ -1,3 +1,5 @@
+var goodpass;
+
 $( function() {
     var dialog, form,
 
@@ -6,7 +8,9 @@ $( function() {
         name = $( "#name" ),
         email = $( "#email" ),
         password = $( "#password" ),
-        allFields = $( [] ).add( name ).add( email ).add( password ),
+        data =$("#data");
+        Username=$("#Username");
+        allFields = $( [] ).add( name ).add( email ).add( password ).add(data).add(Username)
         tips = $( ".validateTips" );
 
     function updateTips( t ) {
@@ -39,23 +43,39 @@ $( function() {
         }
     }
 
+    function check_date(n) {
+        if ($("#form-date").val() !== '') {
+            return true;}
+        else
+            form-date.addClass( "ui-state-error" );
+            updateTips( n );
+            return false;
+        }
+
+
     function addUser() {
         var valid = true;
         allFields.removeClass( "ui-state-error" );
 
-        valid = valid && checkLength( name, "username", 3, 16 );
+        valid = valid && checkLength( Username, "username", 1, 16 );
+        valid = valid && checkLength( name, "name", 1, 16 );
         valid = valid && checkLength( email, "email", 6, 80 );
-        valid = valid && checkLength( password, "password", 5, 16 );
+        valid = valid && checkLength( password, "password", 6, 16 );
 
-        valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+        valid = valid && checkRegexp( name, /^([a-zA-Z\s])+$/i, "Name may consist of a-z A-Z spaces and must begin with a letter." );
         valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
         valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+        valid = valid && checkRegexp( Username, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+        valid = check_date("Must Fill Date");
 
         if ( valid ) {
             $( "#users tbody" ).append( "<tr>" +
+                "<td>" + Username.val() + "</td>" +
                 "<td>" + name.val() + "</td>" +
                 "<td>" + email.val() + "</td>" +
                 "<td>" + password.val() + "</td>" +
+
+
                 "</tr>" );
             dialog.dialog( "close" );
         }
