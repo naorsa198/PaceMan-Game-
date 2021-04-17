@@ -1,0 +1,110 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n\t<head>\r\n\t\t<script src=\"./jquery-3.4.1.slim.min.js\"></script>\r\n\t\t<script type=\"text/javascript\" src=\"./app.js\"></script>\r\n\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />\r\n\r\n\r\n\r\n\t</head>\r\n\r\n\t<body>\r\n\t<img src=\"data:image/png;base64,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\" alt=\"temp_logo\" height=\"120\">\r\n\t<div id=\"score\">\r\n\t\t\t<label for=\"lblScore\">SCORE:</label>\r\n\t\t\t<input id=\"lblScore\" type=\"text\" />\r\n\t\t</div>\r\n\t\t<div id=\"time\">\r\n\t\t\t<label for=\"lblTime\">TIME:</label>\r\n\t\t\t<input id=\"lblTime\" type=\"text\" />\r\n\t\t</div>\r\n\t\t<div id=\"game\">\r\n\t\t\tdfgfd\r\n\t\t\t<canvas id=\"canvas\" height=\"600\" width=\"600\"></canvas>\r\n\t\t</div>\r\n\t\t<div>\r\n\t\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n\t\t\t<title>jQuery UI Dialog - Modal form</title>\r\n\t\t\t<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"/resources/demos/style.css\">\r\n\t\t\t<style>\r\n\t\t\t\tlabel, input { display:block; }\r\n\t\t\t\tinput.text { margin-bottom:12px; width:95%; padding: .4em; }\r\n\t\t\t\tfieldset { padding:0; border:0; margin-top:25px; }\r\n\t\t\t\th1 { font-size: 1.2em; margin: .6em 0; }\r\n\t\t\t\tdiv#users-contain { width: 350px; margin: 20px 0; }\r\n\t\t\t\tdiv#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }\r\n\t\t\t\tdiv#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }\r\n\t\t\t\t.ui-dialog .ui-state-error { padding: .3em; }\r\n\t\t\t\t.validateTips { border: 1px solid transparent; padding: 0.3em; }\r\n\t\t\t</style>\r\n\t\t\t<script src=\"https://code.jquery.com/jquery-1.12.4.js\"></script>\r\n\t\t\t<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>\r\n\t\t\t<script>\r\n\t\t\t\t$( function() {\r\n\t\t\t\t\tvar dialog, form,\r\n\r\n\t\t\t\t\t\t\t// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29\r\n\t\t\t\t\t\t\temailRegex = /^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,\r\n\t\t\t\t\t\t\tname = $( \"#name\" ),\r\n\t\t\t\t\t\t\temail = $( \"#email\" ),\r\n\t\t\t\t\t\t\tpassword = $( \"#password\" ),\r\n\t\t\t\t\t\t\tallFields = $( [] ).add( name ).add( email ).add( password ),\r\n\t\t\t\t\t\t\ttips = $( \".validateTips\" );\r\n\r\n\t\t\t\t\tfunction updateTips( t ) {\r\n\t\t\t\t\t\ttips\r\n\t\t\t\t\t\t\t\t.text( t )\r\n\t\t\t\t\t\t\t\t.addClass( \"ui-state-highlight\" );\r\n\t\t\t\t\t\tsetTimeout(function() {\r\n\t\t\t\t\t\t\ttips.removeClass( \"ui-state-highlight\", 1500 );\r\n\t\t\t\t\t\t}, 500 );\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t\tfunction checkLength( o, n, min, max ) {\r\n\t\t\t\t\t\tif ( o.val().length > max || o.val().length < min ) {\r\n\t\t\t\t\t\t\to.addClass( \"ui-state-error\" );\r\n\t\t\t\t\t\t\tupdateTips( \"Length of \" + n + \" must be between \" +\r\n\t\t\t\t\t\t\t\t\tmin + \" and \" + max + \".\" );\r\n\t\t\t\t\t\t\treturn false;\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\treturn true;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t\tfunction checkRegexp( o, regexp, n ) {\r\n\t\t\t\t\t\tif ( !( regexp.test( o.val() ) ) ) {\r\n\t\t\t\t\t\t\to.addClass( \"ui-state-error\" );\r\n\t\t\t\t\t\t\tupdateTips( n );\r\n\t\t\t\t\t\t\treturn false;\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\treturn true;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t\tfunction addUser() {\r\n\t\t\t\t\t\tvar valid = true;\r\n\t\t\t\t\t\tallFields.removeClass( \"ui-state-error\" );\r\n\r\n\t\t\t\t\t\tvalid = valid && checkLength( name, \"username\", 3, 16 );\r\n\t\t\t\t\t\tvalid = valid && checkLength( email, \"email\", 6, 80 );\r\n\t\t\t\t\t\tvalid = valid && checkLength( password, \"password\", 5, 16 );\r\n\r\n\t\t\t\t\t\tvalid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\\s])+$/i, \"Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter.\" );\r\n\t\t\t\t\t\tvalid = valid && checkRegexp( email, emailRegex, \"eg. ui@jquery.com\" );\r\n\t\t\t\t\t\tvalid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, \"Password field only allow : a-z 0-9\" );\r\n\r\n\t\t\t\t\t\tif ( valid ) {\r\n\t\t\t\t\t\t\t$( \"#users tbody\" ).append( \"<tr>\" +\r\n\t\t\t\t\t\t\t\t\t\"<td>\" + name.val() + \"</td>\" +\r\n\t\t\t\t\t\t\t\t\t\"<td>\" + email.val() + \"</td>\" +\r\n\t\t\t\t\t\t\t\t\t\"<td>\" + password.val() + \"</td>\" +\r\n\t\t\t\t\t\t\t\t\t\"</tr>\" );\r\n\t\t\t\t\t\t\tdialog.dialog( \"close\" );\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\treturn valid;\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t\tdialog = $( \"#dialog-form\" ).dialog({\r\n\t\t\t\t\t\tautoOpen: false,\r\n\t\t\t\t\t\theight: 400,\r\n\t\t\t\t\t\twidth: 350,\r\n\t\t\t\t\t\tmodal: true,\r\n\t\t\t\t\t\tbuttons: {\r\n\t\t\t\t\t\t\t\"Create an account\": addUser,\r\n\t\t\t\t\t\t\tCancel: function() {\r\n\t\t\t\t\t\t\t\tdialog.dialog( \"close\" );\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\tclose: function() {\r\n\t\t\t\t\t\t\tform[ 0 ].reset();\r\n\t\t\t\t\t\t\tallFields.removeClass( \"ui-state-error\" );\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t});\r\n\r\n\t\t\t\t\tform = dialog.find( \"form\" ).on( \"submit\", function( event ) {\r\n\t\t\t\t\t\tevent.preventDefault();\r\n\t\t\t\t\t\taddUser();\r\n\t\t\t\t\t});\r\n\r\n\t\t\t\t\t$( \"#create-user\" ).button().on( \"click\", function() {\r\n\t\t\t\t\t\tdialog.dialog( \"open\" );\r\n\t\t\t\t\t});\r\n\t\t\t\t} );\r\n\t\t\t</script>\r\n\t\t\t</head>\r\n\t\t\t<body>\r\n\r\n\t\t\t<div id=\"dialog-form\" title=\"Create new user\">\r\n\t\t\t\t<p class=\"validateTips\">All form fields are required.</p>\r\n\r\n\t\t\t\t<form>\r\n\t\t\t\t\t<fieldset>\r\n\t\t\t\t\t\t<label for=\"name\">Name</label>\r\n\t\t\t\t\t\t<input type=\"text\" name=\"name\" id=\"name\" value=\"Jane Smith\" class=\"text ui-widget-content ui-corner-all\">\r\n\t\t\t\t\t\t<label for=\"email\">Email</label>\r\n\t\t\t\t\t\t<input type=\"text\" name=\"email\" id=\"email\" value=\"jane@smith.com\" class=\"text ui-widget-content ui-corner-all\">\r\n\t\t\t\t\t\t<label for=\"password\">Password</label>\r\n\t\t\t\t\t\t<input type=\"password\" name=\"password\" id=\"password\" value=\"xxxxxxx\" class=\"text ui-widget-content ui-corner-all\">\r\n\r\n\t\t\t\t\t\t<!-- Allow form submission with keyboard without duplicating the dialog button -->\r\n\t\t\t\t\t\t<input type=\"submit\" tabindex=\"-1\" style=\"position:absolute; top:-1000px\">\r\n\t\t\t\t\t</fieldset>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\r\n\r\n\t\t\t<button id=\"create-user\">Create new user</button>\r\n\r\n\r\n\t\t\t</body>\r\n\t\t</div>\r\n\t</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 542912be71f917a9e9377a5235f3f111c94434bc)
++++ b/index.html	(date 1618658561434)
+@@ -41,98 +41,7 @@
+ 			</style>
+ 			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+-			<script>
+-				$( function() {
+-					var dialog, form,
+-
+-							// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
+-							emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+-							name = $( "#name" ),
+-							email = $( "#email" ),
+-							password = $( "#password" ),
+-							allFields = $( [] ).add( name ).add( email ).add( password ),
+-							tips = $( ".validateTips" );
+-
+-					function updateTips( t ) {
+-						tips
+-								.text( t )
+-								.addClass( "ui-state-highlight" );
+-						setTimeout(function() {
+-							tips.removeClass( "ui-state-highlight", 1500 );
+-						}, 500 );
+-					}
+-
+-					function checkLength( o, n, min, max ) {
+-						if ( o.val().length > max || o.val().length < min ) {
+-							o.addClass( "ui-state-error" );
+-							updateTips( "Length of " + n + " must be between " +
+-									min + " and " + max + "." );
+-							return false;
+-						} else {
+-							return true;
+-						}
+-					}
+-
+-					function checkRegexp( o, regexp, n ) {
+-						if ( !( regexp.test( o.val() ) ) ) {
+-							o.addClass( "ui-state-error" );
+-							updateTips( n );
+-							return false;
+-						} else {
+-							return true;
+-						}
+-					}
+-
+-					function addUser() {
+-						var valid = true;
+-						allFields.removeClass( "ui-state-error" );
+-
+-						valid = valid && checkLength( name, "username", 3, 16 );
+-						valid = valid && checkLength( email, "email", 6, 80 );
+-						valid = valid && checkLength( password, "password", 5, 16 );
+-
+-						valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+-						valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
+-						valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+-
+-						if ( valid ) {
+-							$( "#users tbody" ).append( "<tr>" +
+-									"<td>" + name.val() + "</td>" +
+-									"<td>" + email.val() + "</td>" +
+-									"<td>" + password.val() + "</td>" +
+-									"</tr>" );
+-							dialog.dialog( "close" );
+-						}
+-						return valid;
+-					}
+-
+-					dialog = $( "#dialog-form" ).dialog({
+-						autoOpen: false,
+-						height: 400,
+-						width: 350,
+-						modal: true,
+-						buttons: {
+-							"Create an account": addUser,
+-							Cancel: function() {
+-								dialog.dialog( "close" );
+-							}
+-						},
+-						close: function() {
+-							form[ 0 ].reset();
+-							allFields.removeClass( "ui-state-error" );
+-						}
+-					});
+-
+-					form = dialog.find( "form" ).on( "submit", function( event ) {
+-						event.preventDefault();
+-						addUser();
+-					});
+-
+-					$( "#create-user" ).button().on( "click", function() {
+-						dialog.dialog( "open" );
+-					});
+-				} );
+-			</script>
++			<script type="text/javascript" src=Register.js></script>
+ 			</head>
+ 			<body>
+ 
