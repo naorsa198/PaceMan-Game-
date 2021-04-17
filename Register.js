@@ -72,10 +72,12 @@ $( function() {
                 "<td>" + name.val() + "</td>" +
                 "<td>" + email.val() + "</td>" +
                 "<td>" + password.val() + "</td>" +
+                "<td>" + form-date.val() + "</td>" +
 
 
                 "</tr>" );
             dialog.dialog( "close" );
+            ShowDiv('login');
         }
         return valid;
     }
