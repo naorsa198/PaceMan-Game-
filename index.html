@@ -7,160 +7,287 @@
 
 		<script src="./jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src=Register.js></script>
+		<script type="text/javascript" src=login.js></script>
 
 		<!-- Load an icon library -->
 		<script src="https://kit.fontawesome.com/675c2173a2.js" crossorigin="anonymous"></script>
 
-		<!--  styles  -->
-		<link rel="stylesheet" type="text/css" href="style.css" />
-
 	</head>
 
+<body onload="openingPage()" background="images/wp4078888_2.jpg">
 
-	<!--TODO:  in BODY navigat to welcome page-->
-<body background="images/wp4078888.jpg">
-	
+	<img src="images/Pac-Man-Logo.jpg" alt="packman_logo" width="120" height="50" class="packman-logo">
 	<canvas id="info-canvas"></canvas>
-	<!--TODO: scrit to connect to all the js-->
-	<!--TODO: meta-->
+
+	<script type="text/javascript" src=DivHendler.js></script> <!--start-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript" src="AboutModel.js"></script>
 
 	<!-- Menu
 	================================================== -->
-	<header class="navbar" >
-		<a href="/" class="logo">
-			<img  src="images/Pac-Man-Logo.jpg"width="100" height="40">
-		</a>
-		<div id="menu-bar">
-			<a id ="Welcome-menu" class="mene-button" href="#" onclick="ShowDiv('welcome')">
-				<i class="fas fa-home" ></i>
-				Welcome
-			</a>
-			<a id="Register-menu" class="mene-button" href="#" onclick="ShowDiv('register')">
-				<i class="far fa-address-card"></i>
-				Register
-			</a>
-			<a id="Login-menu" class="mene-button" href="#" onclick="ShowDiv('login')">
-				<i class="fas fa-check-double"></i>
-				Login
-			</a>
-			<a id="About-menu" class="mene-button" href="#" onclick="ShowDiv('about')">
-				<i class="fas fa-user-friends"></i>
-				About
-			</a>
-		</div>
+	<header class="menu" >
+			<a id ="welcome-menu" class="menu-button" href="#" onclick="showDiv('welcome')"><i class="fas fa-home" ></i>Welcome</a>
+			<a id="register-menu" class="menu-button" href="#" onclick="openDialog()"><i class="far fa-address-card"></i>Register</a>
+			<a id="login-menu" class="menu-button" href="#" onclick="showDiv('login')"><i class="fas fa-sign-in-alt"></i>Login</a>
+			<a id="about-menu" class="menu-button" href="#" onclick="showDiv('about')"><i class="fas fa-user-friends"></i>About</a>
 	</header>
 
 
-	<!--Welcome page
-  ================================================== -->
-	<div id="welcome">
+<!--	<div id="score">-->
+<!--		<label for="lblScore">SCORE:</label>-->
+<!--		<input id="lblScore" type="text" />-->
+<!--	</div>-->
+<!--	<div id="time">-->
+<!--		<label for="lblTime">TIME:</label>-->
+<!--		<input id="lblTime" type="text" />-->
+<!--	</div>-->
+<!--	<div id="game">-->
+<!--		<canvas id="canvas" height="600" width="600"></canvas>-->
+<!--	</div>-->
 
-	</div>
+
+	<!--Welcome page
+	================================================== -->
+	<div id="welcome" class="main-div">
+		<img src="images/Pac-Man-Logo.jpg" alt="packman_logo"  class="welcome-packman-logo" >
+		<button class="welcome-buttons" style="vertical-align: middle" href="#" onclick="openDialog()">Register</button>
+		<p></p>
+		<button class="welcome-buttons" style="vertical-align: middle" href="#" onclick="showDiv('login')" >Login</button>
+	</div>  <!--end welcome-->
+
 
 	<!--Register page
-  ================================================== -->
-	<div id="register">
+	================================================== -->
+	<div id="register" class="main-div">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>jQuery UI Dialog - Modal form</title>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="/resources/demos/style.css">
 
-		<style>
-			label, input { display:block; }
-			input.text { margin-bottom:12px; width:95%; padding: .4em; }
-			fieldset { padding:0; border:0; margin-top:25px; }
-			h1 { font-size: 1.2em; margin: .6em 0; }
-			div#users-contain { width: 350px; margin: 20px 0; }
-			div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
-			div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
-			.ui-dialog .ui-state-error { padding: .3em; }
-			.validateTips { border: 1px solid transparent; padding: 0.3em; }
-		</style>
-
 		<body id="dialog-form-body">
-		<div id="dialog-form" title="Create new user">
+		<div id="dialog-form" title="Register" class="mainpage">
 			<p class="validateTips">All form fields are required.</p>
-
 			<form>
 				<fieldset>
 					<label for="name">Name</label>
 					<input type="text" name="name" id="name" placeholder="Your Name" class="text ui-widget-content ui-corner-all">
+
 					<label for="email">Email</label>
-					<input type="text" name="email" id="email" placeholder="example@example.com" class="text ui-widget-content ui-corner-all">
+					<input type="email" name="email" id="email" placeholder="example@example.com" class="text ui-widget-content ui-corner-all">
+
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" placeholder="xxxxxxx" class="text ui-widget-content ui-corner-all">
+
 					<label for="Username">Username</label>
-					<input type="Username" name="password" id="Username" placeholder="Username" class="text ui-widget-content ui-corner-all">
-					<label for="form-date">Username</label>
-					<input type="date" name="date" id="form-date"  class="text ui-widget-content ui-corner-all">
+					<input type="Username" name="Username" id="Username" placeholder="Username" class="text ui-widget-content ui-corner-all">
+
+					<label for="date">Date of Birth</label>
+					<input type="date" name="date" id="date" placeholder="Date of Birth" class="text ui-widget-content ui-corner-all">
 
 
 
 					<!-- Allow form submission with keyboard without duplicating the dialog button -->
-					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+					<input id="welcome-buttons" class="welcome-buttons" type="submit" tabindex="-1" style="position:absolute; top:-1000px">
 				</fieldset>
 			</form>
 		</div> <!--end dialog-form-->
-
-
 		<div id="users-contain" class="ui-widget">
 			<h1>Existing Users:</h1>
 			<table id="users" class="ui-widget ui-widget-content">
 				<thead>
 				<tr class="ui-widget-header ">
-					<th>Name</th>
+					<th>Username</th>
 					<th>Email</th>
-					<th>Password</th>
+					<th>Date of Registion</th>
+
 				</tr>
 				</thead>
 				<tbody>
 				<tr>
-					<td>John Doe</td>
-					<td>john.doe@example.com</td>
-					<td>johndoe1</td>
+					<td></td>
+					<td></td>
 				</tr>
 				</tbody>
 			</table>
 		</div>
-		<button id="create-user">Create new user</button>
+		<button  class="welcome-buttons" onclick="openDialog()">Register</button>
+		</body> <!--end dialog-form-body-->
+	</div> <!--end register-->
 
-
-			</body> <!--end dialog-form-body-->
-		</div> <!--end register-->
 
 	<!--Login page
 	   ================================================== -->
-	<div id="login">
+	<div id="login" class="main-div">
+		<form class="form style-9">
+			<h1>Log In</h1>
+			<ul>
+				<li>
+					<label for="Username">Name</label>
+					<input type="text" name="Username" id="UsernameLogin" placeholder="Username" class="field-style field-split align-left">
 
+					<label for="password">Password</label>
+					<input type="password" name="password" id="passwordLogin" placeholder="xxxxxxx" class="field-style field-split align-right">
+				</li>
+				<li>
+					<input type="button" id=loginButton value="Login" onclick="checkDetails()"/>
+				</li>
+			</ul>
+		</form>
 	</div>  <!--end login-->
 
 	<!--Settings page
 	================================================== -->
-	<div id="settings">
+	<div id="settings" class="settingOption">
+		<script type="text/javascript" src=Settings.js></script>
+		<title>Geme Setting</title>
+		<h2>You can choose your on setting or you can choose random setting whit the random button</h2>
+		<div class="settings-wrepper" id="settings-wrepper">
+			<div id="keys-div">
+				<p style="line-height: 0.7;">Enter keys preferences:</p>
+				<table id="keys" class="settingtable" >
+					<!--row 1: head line-->
+					<tr>
+						<!--cells in row 1-->
+						<th>Left Key</th>
+						<th>Up Key</th>
+						<th>Down Key</th>
+						<th>Right Key</th>
+					</tr>
 
+					<!--row 2:input user choose-->
+					<tr>
+						<!--cells in row 2-->
+						<td>
+							<input type="text" id="leftKey" size="10" maxlength="1" onkeydown="get_key_left()" >
+						</td>
+						<td>
+							<input type="text" id="upKey" size="10" maxlength="1" onkeydown="get_key_up()">
+						</td>
+						<td>
+							<input type="text" id="downKey" size="10" maxlength="1" onkeydown="get_key_down()">
+						</td>
+						<td>
+							<input type="text" id="rightKey" size="10" maxlength="1" onkeydown="get_key_right()">
+						</td>
+					</tr>
+
+					<!--row 3: -->
+					<tr>
+						<td>
+							<i class="fas fa-check" id="v_left" hight="20" width="20" style="display: none;"></i>
+<!--							<img src="images/v.png" id="v_left" hight="20" width="20" style="display: none;" >-->
+						</td>
+						<td>
+							<i class="fas fa-check" id="v_up" hight="20" width="20" style="display: none;"></i>
+<!--							<img src="images/v.png" id="v_up" hight="20" width="20" style="display: none;" >-->
+						</td>
+						<td>
+							<i class="fas fa-check" id="v_down" hight="20" width="20" style="display: none;"></i>
+<!--							<img src="images/v.png" id="v_down" hight="20" width="20" style="display: none;" >-->
+						</td>
+						<td>
+							<i class="fas fa-check" id="v_right" hight="20" width="20" style="display: none;"></i>
+<!--							<img src="images/v.png" id="v_right" hight="20" width="20" style="display: none;" >-->
+						</td>
+					</tr>
+				</table> <!--end key table-->
+				<p id="left"></p>
+				<p id="up"></p>
+				<p id="down"></p>
+				<p id="right"></p>
+			</div><!--end keys-div-->
+
+			<div class="num-ghost-and-balls">
+				<p style="display: inline-block;line-height: 0.7;">Enter number of ghosts: (min-1, max-4)</p>
+				<input id="ghost" type="number" size="10" class="setting-input">
+				<br>
+				<p style="display: inline;line-height: 0.7;">Enter number of balls: (min-50, max-90)</p>
+				<input id="num_of_balls" type="text" size="10" maxlength="2" class="setting-input">
+			</div><!--end num-ghost-and-balls-->
+
+			<div style='clear:both'></div>
+
+			<div id="color-picker">
+				<p style="line-height: 0.7;">Choose colors:</p>
+				<table class="settingtable">
+					<!--row 1: head line-->
+					<tr>
+						<th>5 Points</th>
+						<th style="padding-left: 17px">15 Points</th>
+						<th style="padding-left: 17px">25 Points</th>
+					</tr>
+
+					<!--row 2:input user choose-->
+					<tr>
+						<td>
+							<input type="color" id="5points" name="5points" value="#ffffff">
+						</td>
+						<td style="padding-left: 17px">
+							<input type="color" id="15points" name="15points" value="#ffffff">
+						</td>
+						<td style="padding-left: 17px">
+							<input type="color" id="25points" name="25points" value="#ffffff">
+						</td>
+					</tr>
+				</table><!--end colorPicker table-->
+			</div> <!--end color-picker-->
+
+			<div id="time-picker">
+				<p style="display: inline-block; line-height: 0.7;">How long do you want to play? (in seconds)</p>
+				<p style="display: inline-block; line-height: 0.7;">Enter Time: (min-60 sec) </p>
+				<input id="time" type="number" size="10" class="setting-input">
+			</div> <!--end time-picker-->
+
+			<div id="random">
+				<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="put_random_values()">Random Values</button>
+				<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="submit_it()">Start Game!</button>
+			</div> <!--end random-->
+
+			<div style='clear:both'></div>
+
+
+		</div><!--end settings-wrepper-->
 	</div>  <!--end settings-->
 
 	<!--About page
 	================================================== -->
-	<div id="about">
-
+	<div id="about" class="aboutModel">
+		<script type="text/javascript" src="AboutModel.js"></script>
+		<!-- About Modal content -->
+		<div class="about-content">
+			<span  class="closeSpan">&times;</span>
+			<p>
+				<br>
+				<b>Submitted by:</b> Naor *** and Nicole Kenigsberg.
+				<br>
+				<b>Plugin:</b>
+				<br>
+				We used fontawesome Plugin in the Menu header, and Validation JQuery Plugin in the Register section.
+				<br>
+				<b>problems:</b>
+				<br>
+				*************
+				<br>
+				<b><i>Hope you enjoy the game :)</i></b>
+			</p>
+		</div>  <!--end about-content-->
 	</div>  <!--end about-->
 
 	<!--Game page
 	================================================== -->
-	<div id="game">
-
+	<div id="game" >
+		<h1>Game Page</h1>
 	</div>  <!--end game-->
 
 	<!--GameOver page
 	================================================== -->
-	<div id="gameOver">
-
+	<div id="gameOver" class="model-div">
 	</div>  <!--end gameOver-->
 
-</body>
+	</body>
 </html>
