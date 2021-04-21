@@ -19,7 +19,7 @@
 
 	</head>
 
-<body onload="Start()" background="images/wp4078888_2.jpg">
+<body onload="openingPage()" background="images/wp4078888_2.jpg">
 
 	<img src="images/Pac-Man-Logo.jpg" alt="packman_logo" width="120" height="50" class="packman-logo ">
 <!--	<img src="images/life_pacman.png"  width="35" height="35" id="life_pacman">-->
@@ -144,13 +144,13 @@
 	<!--Game page
 	================================================== -->
 	<div id="game" class="gameDiv">
-		<canvas id="canvas" height="700px" width="700px"></canvas>
+		<canvas id="game-canvas" ></canvas>
 		<script type="text/javascript" src="./app.js"></script>
 	</div>  <!--end game-->
 
 	<!--Settings page
 	================================================== -->
-	<div id="settings" style="display: none" class="settingOption">
+	<div id="settings"  class="settingOption">
 		<script type="text/javascript" src=Settings.js></script>
 		<h2>Geme Setting</h2>
 		<h2>You can choose your on setting or you can choose random setting whit the random button</h2>
