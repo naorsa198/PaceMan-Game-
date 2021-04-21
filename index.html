@@ -19,9 +19,10 @@
 
 	</head>
 
-<body onload="openingPage()" background="images/wp4078888_2.jpg">
+<body onload="Start()" background="images/wp4078888_2.jpg">
 
-	<img src="images/Pac-Man-Logo.jpg" alt="packman_logo" width="120" height="50" class="packman-logo">
+	<img src="images/Pac-Man-Logo.jpg" alt="packman_logo" width="120" height="50" class="packman-logo ">
+<!--	<img src="images/life_pacman.png"  width="35" height="35" id="life_pacman">-->
 	<canvas id="info-canvas"></canvas>
 
 	<script type="text/javascript" src=DivHendler.js></script> <!--start-->
@@ -83,8 +84,8 @@
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" placeholder="xxxxxxx" class="text ui-widget-content ui-corner-all">
 
-					<label for="Username">Username</label>
-					<input type="Username" name="Username" id="Username" placeholder="Username" class="text ui-widget-content ui-corner-all">
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" placeholder="Username" class="text ui-widget-content ui-corner-all">
 
 					<label for="date">Date of Birth</label>
 					<input type="date" name="date" id="date" placeholder="Date of Birth" class="text ui-widget-content ui-corner-all">
@@ -140,11 +141,18 @@
 		</form>
 	</div>  <!--end login-->
 
+	<!--Game page
+	================================================== -->
+	<div id="game" class="gameDiv">
+		<canvas id="canvas" height="700px" width="700px"></canvas>
+		<script type="text/javascript" src="./app.js"></script>
+	</div>  <!--end game-->
+
 	<!--Settings page
 	================================================== -->
-	<div id="settings" class="settingOption">
+	<div id="settings" style="display: none" class="settingOption">
 		<script type="text/javascript" src=Settings.js></script>
-		<title>Geme Setting</title>
+		<h2>Geme Setting</h2>
 		<h2>You can choose your on setting or you can choose random setting whit the random button</h2>
 		<div class="settings-wrepper" id="settings-wrepper">
 			<div id="keys-div">
@@ -163,16 +171,16 @@
 					<tr>
 						<!--cells in row 2-->
 						<td>
-							<input type="text" id="leftKey" size="10" maxlength="1" onkeydown="get_key_left()" >
+							<input type="text" id="leftKey" size="10" maxlength="1" onkeydown="get_key_left(event)" >
 						</td>
 						<td>
-							<input type="text" id="upKey" size="10" maxlength="1" onkeydown="get_key_up()">
+							<input type="text" id="upKey" size="10" maxlength="1" onkeydown="get_key_up(event)">
 						</td>
 						<td>
-							<input type="text" id="downKey" size="10" maxlength="1" onkeydown="get_key_down()">
+							<input type="text" id="downKey" size="10" maxlength="1" onkeydown="get_key_down(event)">
 						</td>
 						<td>
-							<input type="text" id="rightKey" size="10" maxlength="1" onkeydown="get_key_right()">
+							<input type="text" id="rightKey" size="10" maxlength="1" onkeydown="get_key_right(event)">
 						</td>
 					</tr>
 
@@ -180,26 +188,22 @@
 					<tr>
 						<td>
 							<i class="fas fa-check" id="v_left" hight="20" width="20" style="display: none;"></i>
-<!--							<img src="images/v.png" id="v_left" hight="20" width="20" style="display: none;" >-->
 						</td>
 						<td>
 							<i class="fas fa-check" id="v_up" hight="20" width="20" style="display: none;"></i>
-<!--							<img src="images/v.png" id="v_up" hight="20" width="20" style="display: none;" >-->
 						</td>
 						<td>
 							<i class="fas fa-check" id="v_down" hight="20" width="20" style="display: none;"></i>
-<!--							<img src="images/v.png" id="v_down" hight="20" width="20" style="display: none;" >-->
 						</td>
 						<td>
 							<i class="fas fa-check" id="v_right" hight="20" width="20" style="display: none;"></i>
-<!--							<img src="images/v.png" id="v_right" hight="20" width="20" style="display: none;" >-->
 						</td>
 					</tr>
 				</table> <!--end key table-->
-				<p id="left"></p>
-				<p id="up"></p>
-				<p id="down"></p>
-				<p id="right"></p>
+<!--				<p id="left"></p>-->
+<!--				<p id="up"></p>-->
+<!--				<p id="down"></p>-->
+<!--				<p id="right"></p>-->
 			</div><!--end keys-div-->
 
 			<div class="num-ghost-and-balls">
@@ -263,7 +267,7 @@
 			<span  class="closeSpan">&times;</span>
 			<p>
 				<br>
-				<b>Submitted by:</b> Naor *** and Nicole Kenigsberg.
+				<b>Submitted by:</b> Naor Saraf and Nicole Kenigsberg.
 				<br>
 				<b>Plugin:</b>
 				<br>
@@ -278,11 +282,6 @@
 		</div>  <!--end about-content-->
 	</div>  <!--end about-->
 
-	<!--Game page
-	================================================== -->
-	<div id="game" >
-		<h1>Game Page</h1>
-	</div>  <!--end game-->
 
 	<!--GameOver page
 	================================================== -->

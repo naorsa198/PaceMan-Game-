@@ -7,11 +7,85 @@ var start_time;
 var time_elapsed;
 var interval;
 
-$(document).ready(function() {
-	context = canvas.getContext("2d");
-	Start();
-});
-function Start() {
+// $(document).ready(function() {
+// 	context = canvas.getContext("2d");
+// 	Start();
+// });
+var canvas_game = document.getElementById("canvas")
+var game_canvas_ctx = canvas_game.getContext("2d");
+
+var canves_info = document.getElementById("info-canvas")
+var info_canvas_ctx= canves_info.getContext("2d");
+
+var life_pacman = document.getElementById("life_pacman");
+
+//TODO TRANSPERSITY !!
+function DrawLives() {
+	var life_image = new Image();
+	life_image.src = 'images/life_pacman.png';
+	// life_pacman.style.left = "700px";
+	// life_pacman.style.top = "20px";
+	for (var i=0; i<5; i++) {
+		info_canvas_ctx.drawImage(life_image, 10 + i* 50, 50, 50, 50);
+	}
+}
+
+function DrawBaseOfInfoCanvas() {
+	canves_info.width = 600;
+	canves_info.height = 120;
+	canves_info.style.left = "700px";
+	canves_info.style.top = "20px";
+	canves_info.style.position = "absolute";
+
+
+	info_canvas_ctx.fillStyle = "#E7DB50";
+	info_canvas_ctx.lineWidth="5px";
+	info_canvas_ctx.strokeStyle="#000000";
+	info_canvas_ctx.rect(0,0,canves_info.width,canves_info.height);
+	info_canvas_ctx.fill();
+	info_canvas_ctx.stroke();
+
+	//username
+	info_canvas_ctx.fillStyle = "#f1f1f1";
+	info_canvas_ctx.font =  '30px Pacifico';
+	info_canvas_ctx.textShadow = "2px -6px #D1B358";
+	if (typeof (username) !== "undefined")
+		info_canvas_ctx.fillText(username,10,35);
+
+	//lifes
+	DrawLives();
+
+	//Time
+	info_canvas_ctx.fillStyle = "#f1f1f1";
+	info_canvas_ctx.font =  '30px Pacifico';
+	info_canvas_ctx.textShadow = "2px -6px #D1B358";
+	info_canvas_ctx.fillText("Time:",180,35);
+
+	//clock
+	info_canvas_ctx.fillStyle = "#f1f1f1";
+	info_canvas_ctx.font =  '30px Pacifico';
+	info_canvas_ctx.textShadow = "2px -6px #D1B358";
+	info_canvas_ctx.fillText(time_elapsed,190,90);
+
+
+	//Time
+	info_canvas_ctx.fillStyle = "#f1f1f1";
+	info_canvas_ctx.font =  '30px Pacifico';
+	info_canvas_ctx.textShadow = "2px -6px #D1B358";
+	info_canvas_ctx.fillText("Score:",280,35);
+
+	//clock
+	info_canvas_ctx.fillStyle = "#f1f1f1";
+	info_canvas_ctx.font =  '30px Pacifico';
+	info_canvas_ctx.textShadow = "2px -6px #D1B358";
+	info_canvas_ctx.fillText(score,290,90);
+
+
+}
+
+
+function Start(){
+	DrawBaseOfInfoCanvas();
 	board = new Array();
 	score = 0;
 	pac_color = "yellow";
@@ -97,7 +171,7 @@ function GetKeyPressed() {
 }
 
 function Draw() {
-	canvas.width = canvas.width; //clean board
+	game_canvas_ctx.width = game_canvas_ctx.width; //clean board
 	lblScore.value = score;
 	lblTime.value = time_elapsed;
 	for (var i = 0; i < 10; i++) {

@@ -27,9 +27,9 @@ function showDiv(divId){
     if (divId == 'about') {
             openAbout();
     }
-
-
-
+    if(divId =='game'){
+        Start();
+    }
 
 }
 //
@@ -40,7 +40,7 @@ function showDiv(divId){
 // }
 
 
-function showSettings(){
-    var settingDiv = document.getElementById('settings');
-    settingDiv.style.visibility = "visible";
-}
+// function showSettings(){
+//     var settingDiv = document.getElementById('settings');
+//     settingDiv.style.visibility = "visible";
+// }

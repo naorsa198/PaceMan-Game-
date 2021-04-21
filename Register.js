@@ -18,7 +18,7 @@ $( function() {
       email = $( "#email" ),
       password = $( "#password" ),
       date = $( "#date" )
-      username = $("#Username ")
+      username = $("#username ")
       allFields = $( [] ).add( name ).add( email ).add( password ).add( date).add(username),
       tips = $( ".validateTips" );
  
@@ -135,3 +135,4 @@ function openDialog(){
     dialog.dialog( "open" );
 
 }
+

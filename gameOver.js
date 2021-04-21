@@ -24,7 +24,8 @@ function openG() {
 
 function closeG() {
     gameover.style.display = "none";
-    showDiv('settings');
+    showDiv('s' +
+        'ettings');
 }
 
 
