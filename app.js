@@ -26,7 +26,7 @@ var info_canvas_ctx= canves_info.getContext("2d");
 function DrawLives() {
 	var life_image = new Image();
 	// life_image.src = 'images/Pac-Man-Logo.jpg';
-	life_image.src = 'images/life_pacman.jpg';
+	life_image.src = 'images/life_pacman.png';
 	for (var i=0; i<5; i++) {
 		info_canvas_ctx.drawImage(life_image, 10 + i* 50, 50, 50, 50);
 	}
