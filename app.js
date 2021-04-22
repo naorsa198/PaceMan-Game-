@@ -1,4 +1,3 @@
-var game_canvas_ctx;
 var shape = new Object();
 var board;
 var score;
@@ -7,6 +6,7 @@ var start_time;
 var time_elapsed;
 var interval;
 var ghostArr;
+var tmp_info_canvas;
 
 // $(document).ready(function() {
 // 	context = canvas.getContext("2d");
@@ -24,9 +24,11 @@ var info_canvas_ctx= canves_info.getContext("2d");
 
 //TODO TRANSPERSITY !!
 function DrawLives() {
-	var life_image = new Image();
+	// var life_image = new Image();
 	// life_image.src = 'images/Pac-Man-Logo.jpg';
-	life_image.src = 'images/life-pacman.jpg';
+	// life_image.src = 'images/life-pacman.png';
+	var life_image = document.getElementById("life-pacman");
+
 	for (var i=0; i<5; i++) {
 		info_canvas_ctx.drawImage(life_image, 10 + i* 50, 50, 50, 50);
 	}
@@ -51,6 +53,7 @@ function DrawGhosts() {
 
 
 function DrawBaseOfInfoCanvas() {
+	canves_info.style.visibility="visible";
 	canves_info.width = 600;
 	canves_info.height = 120;
 	canves_info.style.left = "700px";
