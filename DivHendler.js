@@ -1,3 +1,4 @@
+
 function openingPage(){
     showDiv('welcome');
 }
@@ -24,12 +25,19 @@ function showDiv(divId){
     var divToShow = document.getElementById(divId);
     divToShow.style.visibility = "visible";
 
-    if (divId == 'about') {
+    if (divId == 'about')
             openAbout();
-    }
-    if(divId =='game'){
+
+    if(divId =='game')
+    {
         Start();
+        // divToShow.style.visibility = "hidden";
+        // gameOverDiv.style.visibility = 'visible';
     }
+
+    if(divId =='gameOver')
+        showGameOver();
+
 
 }
 //

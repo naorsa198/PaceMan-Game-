@@ -1,4 +1,4 @@
-var username2;
+var connectedUsername;
 var password;
 
 function checkDetails() {
@@ -8,6 +8,7 @@ function checkDetails() {
     if (curr == undefined)
         alert("Wrong username or password");
     if (curr['password'] == $("#passwordLogin").val()){
+        connectedUsername=username
         showDiv('settings');
         return true;
     }

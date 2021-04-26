@@ -1,33 +1,56 @@
-var gameover;
-var closebutton;
+var game_over;
+var play_again;
 
 document.addEventListener('DOMContentLoaded', function (event) {
     // Get the modal
-    gameover = document.getElementById('GameOver');
+    game_over = document.getElementById('gameOver');
 
     // Get the <span> element that closes the modal
-    closebutton = document.getElementsByClassName("play_again")[0];
+    play_again = document.getElementsByClassName("play_again")[0];
 
-    closebutton.addEventListener("click",Start);
+    play_again.addEventListener("click",Start);
 });
-function openG() {
-    gameover.style.display = "block";
+
+function showGameOver() {
+    game_over.style.display = "block";
     window.clearInterval(interval);
-    window.clearInterval(interval_ghosts);
-    window.clearInterval(interval_nikud_zaz);
+    // window.clearInterval(interval_ghosts);
+    // window.clearInterval(interval_nikud_zaz);
     interval.clearInterval();
-    // interval.clearInterval();
-    // interval_ghosts.clearInterval();
-    // interval_nikud_zaz.clearInterval();
-    // interval_sticker.clearInterval();
 }
 
-function closeG() {
-    gameover.style.display = "none";
-    showDiv('s' +
-        'ettings');
+function GameOverMessage() {
+    msg = "";
+    if (lives == 0) {
+        msg = "Loser!";
+        // document.getElementById("msg1").style.display = "block";
+        // document.getElementById("msg2").style.display = "none";
+        // document.getElementById("msg3").style.display = "none";
+    }
+    else if(time_elapsed <= 0) {
+        if (score < 100) {
+            msg = "You are better than " + score + " points!";
+            // document.getElementById("msg2").style.display = "block";
+            // document.getElementById("msg2").innerHTML = msg;
+            // document.getElementById("msg1").style.display = "none";
+            // document.getElementById("msg3").style.display = "none";
+        }
+        else { //score > 100
+            msg = "Winner!!!";
+            // document.getElementById("msg3").style.display = "block";
+            // document.getElementById("msg3").innerHTML = msg;
+            // document.getElementById("msg2").style.display = "none";
+            // document.getElementById("msg1").style.display = "none";
+        }
+    }
+    else {
+        msg = "Winner!!!";
+        // document.getElementById("msg3").style.display = "block";
+        // document.getElementById("msg3").innerHTML = msg;
+        // document.getElementById("msg2").style.display = "none";
+        // document.getElementById("msg1").style.display = "none";
+    }
+    document.getElementById("message").innerHTML = msg;
+    showDiv("gameOver")
+
 }
-
-
-
-
