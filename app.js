@@ -317,7 +317,8 @@ function Start() {
 
 	locatePacmen();
 	locateGhosts();
-
+	moveScore.j=10;
+	moveScore.i=10;
 	while (food_remain > 0) {
 		var emptyCell = findRandomEmptyCell(board);
 		var random = Math.floor(Math.random() * 3);
