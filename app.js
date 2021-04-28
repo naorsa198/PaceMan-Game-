@@ -478,7 +478,7 @@ function Draw() {
 			else if (board[i][j] == 30) {
 				game_canvas_ctx.beginPath();
 				let image = new Image();
-				image.src = "images/SmallClock.jpeg";
+				image.src = "images/clock.png";
 				game_canvas_ctx.drawImage(image,center.x-5 , center.y-5 , 20,20)
 			}
 
