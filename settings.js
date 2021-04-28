@@ -215,6 +215,7 @@ function start_play() {
     }
     else{
         alert("Choose Settings for the Game");
+        return;
     }
 }
 

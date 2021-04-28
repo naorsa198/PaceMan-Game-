@@ -2,9 +2,7 @@ function openingPage(){
     showDiv('welcome');
 
 }
-/**
- * line:36, 42, 46-50
- */
+
 function showDiv(divId){
 
     //hide all div
