@@ -8,49 +8,37 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // Get the <span> element that closes the modal
     play_again = document.getElementsByClassName("play_again")[0];
 
-    play_again.addEventListener("click",Start);
+    play_again.addEventListener("click", Start);
 });
 
 function showGameOver() {
     game_over.style.display = "block";
     window.clearInterval(interval);
-    // window.clearInterval(interval_ghosts);
-    // window.clearInterval(interval_nikud_zaz);
+    window.clearInterval(ghost_interval);
     interval.clearInterval();
 }
 
 function GameOverMessage() {
+
+    canves_info.style.visibility="hidden";
     msg = "";
-    if (lives == 0) {
+    if (lifes == 0) {
         msg = "Loser!";
-        // document.getElementById("msg1").style.display = "block";
-        // document.getElementById("msg2").style.display = "none";
-        // document.getElementById("msg3").style.display = "none";
     }
     else if(time_elapsed <= 0) {
         if (score < 100) {
-            msg = "You are better than " + score + " points!";
-            // document.getElementById("msg2").style.display = "block";
-            // document.getElementById("msg2").innerHTML = msg;
-            // document.getElementById("msg1").style.display = "none";
-            // document.getElementById("msg3").style.display = "none";
+            msg = "You are better than " + score.toString() + " points!";
+
         }
         else { //score > 100
             msg = "Winner!!!";
-            // document.getElementById("msg3").style.display = "block";
-            // document.getElementById("msg3").innerHTML = msg;
-            // document.getElementById("msg2").style.display = "none";
-            // document.getElementById("msg1").style.display = "none";
+
         }
     }
     else {
         msg = "Winner!!!";
-        // document.getElementById("msg3").style.display = "block";
-        // document.getElementById("msg3").innerHTML = msg;
-        // document.getElementById("msg2").style.display = "none";
-        // document.getElementById("msg1").style.display = "none";
+
     }
     document.getElementById("message").innerHTML = msg;
     showDiv("gameOver")
-
 }

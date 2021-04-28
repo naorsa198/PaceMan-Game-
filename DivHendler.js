@@ -1,8 +1,10 @@
-
 function openingPage(){
     showDiv('welcome');
-}
 
+}
+/**
+ * line:36, 42, 46-50
+ */
 function showDiv(divId){
 
     //hide all div
@@ -25,30 +27,28 @@ function showDiv(divId){
     var divToShow = document.getElementById(divId);
     divToShow.style.visibility = "visible";
 
-    if (divId == 'about')
-            openAbout();
+    canves_info.style.visibility = "hidden";
 
-    if(divId =='game')
-    {
-        Start();
-        // divToShow.style.visibility = "hidden";
-        // gameOverDiv.style.visibility = 'visible';
+
+    if (divId == 'about')
+        openAbout();
+
+    if(divId !='game') {
+        stopSound();
+        stopGame();
     }
 
-    if(divId =='gameOver')
-        showGameOver();
 
+    if(divId =='game') {
+        startSound();
+        Start();
+    }
+
+    if(divId =='gameOver') {
+        gameDiv.style.visibility = 'visible';
+        divToShow.style.visibility = "visible";
+        canves_info.style.visibility = "visible";
+        showGameOver();
+    }
 
 }
-//
-// function showAboutModel(){
-//     var aboutModel = document.getElementById('about');
-//     aboutModel.style.visibility="visible";
-//     openAbout();
-// }
-
-
-// function showSettings(){
-//     var settingDiv = document.getElementById('settings');
-//     settingDiv.style.visibility = "visible";
-// }

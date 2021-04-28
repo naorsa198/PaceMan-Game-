@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- Required meta tags -->
-<!--		<meta charset="utf-8">-->
-<!--		<meta name="viewport" content="width=device-width, initial-scale=1">-->
-
+		<titl>PacMac Game</titl>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 
 		<script src="./jquery-3.4.1.slim.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 		<script type="text/javascript" src=Register.js></script>
 		<script type="text/javascript" src=login.js></script>
-
 
 		<!-- Load an icon library -->
 		<script src="https://kit.fontawesome.com/675c2173a2.js" crossorigin="anonymous"></script>
@@ -24,8 +22,9 @@
 
 	<img src="images/Pac-Man-Logo.jpg" alt="packman_logo" width="120" height="50" class="packman-logo ">
 
-<!--	<script type="text/javascript" src="app.js"></script>-->
+	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src=DivHendler.js></script>
+	<script type="text/javascript" src="gameMusic.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,24 +34,11 @@
 	================================================== -->
 	<header class="menu" >
 			<a id ="welcome-menu" class="menu-button" href="#" onclick="showDiv('welcome')"><i class="fas fa-home" ></i>Welcome</a>
-			<a id="register-menu" class="menu-button" href="#" onclick="showDiv('Register')"><i class="far fa-address-card"></i>Register</a>
+			<a id="register-menu" class="menu-button" href="#" onclick="openDialog()"><i class="far fa-address-card"></i>Register</a>
 			<a id="login-menu" class="menu-button" href="#" onclick="showDiv('login')"><i class="fas fa-sign-in-alt"></i>Login</a>
 			<a id="about-menu" class="menu-button" href="#" onclick="showDiv('about')"><i class="fas fa-user-friends"></i>About</a>
+			<a class="by"><i class="fas fa-angle-double-right"></i>PacMan Game: Created by Naor Saraf and Nicole Kenigsberg</a>
 	</header>
-
-
-<!--	<div id="score">-->
-<!--		<label for="lblScore">SCORE:</label>-->
-<!--		<input id="lblScore" type="text" />-->
-<!--	</div>-->
-<!--	<div id="time">-->
-<!--		<label for="lblTime">TIME:</label>-->
-<!--		<input id="lblTime" type="text" />-->
-<!--	</div>-->
-<!--	<div id="game">-->
-<!--		<canvas id="canvas" height="600" width="600"></canvas>-->
-<!--	</div>-->
-
 
 	<!--Welcome page
 	================================================== -->
@@ -85,12 +71,11 @@
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" placeholder="xxxxxxx" class="text ui-widget-content ui-corner-all">
 
-					<label for="username">Username</label>
-					<input type="text" name="username" id="username" placeholder="Username" class="text ui-widget-content ui-corner-all">
+					<label for="Username">Username</label>
+					<input type="text" name="Username" id="Username" placeholder="Username" class="text ui-widget-content ui-corner-all">
 
 					<label for="date">Date of Birth</label>
 					<input type="date" name="date" id="date" placeholder="Date of Birth" class="text ui-widget-content ui-corner-all">
-
 
 
 					<!-- Allow form submission with keyboard without duplicating the dialog button -->
@@ -144,7 +129,7 @@
 
 	<!--Settings page
 	================================================== -->
-	<div id="settings"  class="settingOption" style="bottom: 4%">
+	<div id="settings"  class="settingOption main-div" style="bottom: 4%">
 		<script type="text/javascript" src=Settings.js></script>
 		<h2>Geme Setting</h2>
 		<h2>You can choose your on setting or you can choose random setting whit the random button</h2>
@@ -193,18 +178,14 @@
 					</td>
 				</tr>
 			</table> <!--end key table-->
-			<!--				<p id="left"></p>-->
-			<!--				<p id="up"></p>-->
-			<!--				<p id="down"></p>-->
-			<!--				<p id="right"></p>-->
 		</div><!--end keys-div-->
 
 		<div class="num-ghost-and-balls">
 			<p style="display: inline-block;line-height: 0.7;">Enter number of ghosts: (min-1, max-4)</p>
-			<input id="ghost" type="number" size="10" class="setting-input">
+			<input id="num_of_ghost" type="number" size="10" class="setting-input" onkeydown="get_num_of_ghosts()">
 			<br>
 			<p style="display: inline;line-height: 0.7;">Enter number of balls: (min-50, max-90)</p>
-			<input id="num_of_balls" type="text" size="10" maxlength="2" class="setting-input">
+			<input id="num_of_balls" type="text" size="10" maxlength="2" class="setting-input" onkeydown="get_num_of_balls()">
 		</div><!--end num-ghost-and-balls-->
 
 		<div style='clear:both'></div>
@@ -222,13 +203,13 @@
 				<!--row 2:input user choose-->
 				<tr>
 					<td>
-						<input type="color" id="5points" name="5points" value="#ffffff">
+						<input type="color" id="5points_color" name="5points" value="#ffffff">
 					</td>
 					<td style="padding-left: 17px">
-						<input type="color" id="15points" name="15points" value="#ffffff">
+						<input type="color" id="15points_color" name="15points" value="#ffffff">
 					</td>
 					<td style="padding-left: 17px">
-						<input type="color" id="25points" name="25points" value="#ffffff">
+						<input type="color" id="25points_color" name="25points" value="#ffffff">
 					</td>
 				</tr>
 			</table><!--end colorPicker table-->
@@ -237,12 +218,12 @@
 		<div id="time-picker">
 			<p style="display: inline-block; line-height: 0.7;">How long do you want to play? (in seconds)</p>
 			<p style="display: inline-block; line-height: 0.7;">Enter Time: (min-60 sec) </p>
-			<input id="time" type="number" size="10" class="setting-input">
+			<input id="time" type="number" size="10" class="setting-input" onkeydown="get_time()">
 		</div> <!--end time-picker-->
 
 		<div id="random">
-			<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="put_random_values()">Random Values</button>
-			<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="submit_it()">Start Game!</button>
+			<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="set_random_values()">Random Values</button>
+			<button type="button" class="welcome-buttons" style="margin: 30px 100px 200px;" onclick="start_play()">Start Game!</button>
 		</div> <!--end random-->
 
 		<div style='clear:both'></div>
@@ -252,81 +233,17 @@
 
 	<!--Game page
 	================================================== -->
-	<div id="game" class="gameDiv">
-		<canvas id="game-canvas" height="450px" width="1100px"></canvas>
-		<!--add style="visibility: hidden"  to img-->
+	<div id="game" class="gameDiv" >
+		<canvas id="game-canvas" height="650px" width="650px" style="margin-left:15%; margin-bottom: 15%" ></canvas>
 		<script type="text/javascript" src="app.js"></script>
 
-		<img src="images/life-pacman.png" alt="life-pacman" id="life-pacman" style="visibility: hidden" >
-		<img src="images/bigPill.png" id="bigPill_image" height="192" width="192" style="visibility: hidden"/>
-		<img src="images/win.png" id="win_image" height="180" width="320" style="visibility: hidden"/>
-		<img src="images/game-over-logo.png" id="gameover_image" height="225" width="224" style="visibility: hidden"/>
-		<img src="images/bonus.png" id="bonus_image" height="256" width="256" style="visibility: hidden"/>
-		<img src="images/boom.png" id="boom_image" height="126.6" width="200" style="visibility: hidden"/>
-
-
-<!--		<div id="game-info-div">-->
-<!--			<table class="info-table">-->
-<!--				<tr> &lt;!&ndash;row 1&ndash;&gt;-->
-<!--					<th>Name:</th>-->
-<!--					<td>Bill Gates</td>-->
-<!--				</tr>-->
-
-<!--				<tr> &lt;!&ndash;row 2&ndash;&gt;-->
-<!--					<th >Time:</th>-->
-<!--					<td>55577854</td>-->
-<!--				</tr>-->
-
-<!--				&lt;!&ndash;row 3&ndash;&gt;-->
-<!--				<tr>-->
-<!--					<th>Score:</th>-->
-<!--					<td>*****</td>-->
-<!--				</tr>-->
-
-<!--				<tr> &lt;!&ndash;row 4&ndash;&gt;-->
-<!--					<table>-->
-<!--						<tr> &lt;!&ndash;row 1&ndash;&gt;-->
-<!--							<th colspan="3">Settings:</th>-->
-<!--						</tr>-->
-
-<!--						<tr> &lt;!&ndash;row 2&ndash;&gt;-->
-<!--							<td>Keys:-->
-<!--								&lt;!&ndash;key table&ndash;&gt;-->
-<!--								<table class="key-info-table">-->
-<!--									<tr class="kt"> &lt;!&ndash;row 4.1&ndash;&gt;-->
-<!--										<th>lefy key-</th>-->
-<!--										<td>*****</td>-->
-<!--									</tr>-->
-<!--									<tr class="kt"> &lt;!&ndash;row 4.2&ndash;&gt;-->
-<!--										<th>up key-</th>-->
-<!--										<td>*****</td>-->
-<!--									</tr>-->
-<!--									<tr class="kt"> &lt;!&ndash;row 4.3&ndash;&gt;-->
-<!--										<th>right key-</th>-->
-<!--										<td>*****</td>-->
-<!--									</tr>-->
-<!--									<tr class="kt"> &lt;!&ndash;row 4.4&ndash;&gt;-->
-<!--										<th>down key-</th>-->
-<!--										<td>*****</td>-->
-<!--									</tr>-->
-<!--								</table>  &lt;!&ndash;end key table&ndash;&gt;-->
-<!--							</td> &lt;!&ndash;end keys&ndash;&gt;-->
-
-<!--							<td>num of balls:-->
-<!--							</td>-->
-<!--							<td>55577855</td>-->
-<!--						</tr> &lt;!&ndash;end row 2&ndash;&gt;-->
-<!--					</table>-->
-
-<!--					<td>Score:</td>-->
-<!--					<td>*****</td>-->
-
-
-<!--				</tr>-->
-
-
-<!--			</table>-->
-<!--		</div>-->
+		<img src="images/life-pacman.png" alt="life-pacman" id="life-pacman" >
+		<img src="images/bigPill.png" id="bigPill_image" height="192" width="192" />
+		<img src="images/win.png" id="win_image" height="180" width="320" />
+		<img src="images/gameover.png" id="gameover_image" height="225" width="224" />
+		<img src="images/pacmanEaten.png" id="pacmanEaten" height="126.6" width="200"/>
+		<img src="images/nikud_zaz.png" id="nikud_zaz" height="192" width="192">
+		<img src="images/bigClock.png" id="bigClock_image" height="126.6" width="200" >
 	</div>  <!--end game-->
 
 
@@ -340,17 +257,21 @@
 			<span  class="closeSpan">&times;</span>
 			<p>
 				<br>
-				<b>Submitted by:</b> Naor Saraf and Nicole Kenigsberg.
+				<b><i class="fas fa-angle-double-right"></i> Submitted by: </b> Naor Saraf and Nicole Kenigsberg.
 				<br>
-				<b>Plugin:</b>
+				<b><i class="fas fa-plus"></i> Plugin:</b>
 				<br>
-				We used fontawesome Plugin in the Menu header, and Validation JQuery Plugin in the Register section.
+				We used fontawesome Plugin in the Menu header for the icons, and Validation JQuery Plugin for the Register section and for the images effect in the game.
 				<br>
-				<b>problems:</b>
+				<b><i class="fas fa-layer-group"></i> Template:</b>
 				<br>
-				*************
+				We used jquery template for the Register div and Login div, and a template style for the buttons that we changed to match the game style.
 				<br>
-				<b><i>Hope you enjoy the game :)</i></b>
+				<b><i class="fas fa-exclamation-triangle"></i> Problems:</b>
+				<br>
+				We had problem coordinating the size of the game's canvas to the game board and problem make the ghosts and the bonus coin not pass through the walls.
+				<br>
+				<b><i class="fas fa-ghost"></i><i class="fas fa-ghost"></i><i class="fas fa-ghost"></i><i> Hope you enjoy the game  <i class="fas fa-ghost"></i><i class="fas fa-ghost"></i><i class="fas fa-ghost"></i></i></b>
 			</p>
 		</div>  <!--end about-content-->
 	</div>  <!--end about-->
@@ -359,23 +280,23 @@
 	<!--GameOver page
 	================================================== -->
 	<div id="gameOver" class="gameOver">
-		<script type="text/javascript" src=gameOver.js.js></script>
-		<img src="images/game-over-logo.png" width="50%" height="50%">
+		<script type="text/javascript" src=gameOver.js></script>
 		<!-- Modal content -->
-<!--		<div >-->
-			<p id="message">blablablabal</p>
-			<button  type="button" class="welcome-buttons" id="play_again" onclick="showDiv('Settings')">Play again</button>
-<!--		</div>-->
+		<div class="gameOver-content">
+			<img src="images/game-over-logo.png" id="game-over-logo" width="65%" height="65%" style="margin-left:18%" >
+			<p id="message"></p>
+			<button  type="button" class="welcome-buttons" id="play_again" onclick="showDiv('settings')">Play again</button>
+		</div>
 	</div>  <!--end gameOver-->
 
 	</body>
 
 	<div class="footer" id="footer">
-		<p>Pacman Site
+		<p>Pacman Game Site
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-			Created by Naor Saraf and Nicole Kenigsberg.
+			Created by Naor Saraf and Nicole Kenigsberg
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-			contact: Naor*******@gmail.com     Nicolek@gmail.com</p>
+			contact: Naorsa@post.bgu.ac.il &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Nicolek@post.bgu.ac.il</p>
 	</div>
 
 </html>
