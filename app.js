@@ -13,7 +13,6 @@ var ghost_berfor_game;
 
 var canvas_game = document.getElementById("game-canvas")
 var game_canvas_ctx = canvas_game.getContext("2d");
-
 var canves_info = document.getElementById("info-canvas")
 var info_canvas_ctx= canves_info.getContext("2d");
 
@@ -231,7 +230,6 @@ function DrawBaseOfInfoCanvas() {
 function Start() {
 	DrawBaseOfInfoCanvas();
 	canves_info.style.visibility="visible";
-
 	pac_color = "yellow";
 	board = new Array();
 	score = 0;
@@ -385,6 +383,7 @@ function GetKeyPressed() {
 }
 
 function Draw() {
+	canvas_game.style.position="absolute";
 
 	game_canvas_ctx.clearRect(0, 0, game_canvas_ctx.width, game_canvas_ctx.height); //clean board
 	DrawBaseOfInfoCanvas();
@@ -478,7 +477,7 @@ function Draw() {
 			else if (board[i][j] == 30) {
 				game_canvas_ctx.beginPath();
 				let image = new Image();
-				image.src = "images/clock.png";
+				image.src = "images/SmallClock.jpeg";
 				game_canvas_ctx.drawImage(image,center.x-5 , center.y-5 , 20,20)
 			}
 
