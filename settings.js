@@ -202,10 +202,10 @@ function get_values(){
 }
 function start_play() {
     get_values();
-    var balls_flag = (typeof (num_of_balls) != "undefined");
-    var color_point_flag = (typeof (color_5_points) != "undefined" || typeof (color_15_points) != "undefined" || typeof (color_25_points) != "undefined");
-    var ghost_flag = (typeof (ghosts_remain) != "undefined");
-    var time_flag = (typeof (time) != "undefined");
+    var balls_flag = (typeof (num_of_balls) != NaN);
+    var color_point_flag = (typeof (color_5_points) != "#fffff" && typeof (color_15_points) != "#fffff" && typeof (color_25_points) != "#fffff");
+    var ghost_flag = (typeof (ghosts_remain) != "");
+    var time_flag = (typeof (time) != "");
 
     if (balls_flag && color_point_flag && ghost_flag && time_flag) {
         showDiv('game')
