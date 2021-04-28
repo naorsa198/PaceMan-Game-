@@ -210,5 +210,8 @@ function start_play() {
     if (balls_flag && color_point_flag && ghost_flag && time_flag) {
         showDiv('game')
     }
+    else{
+        alert("Choose Settings for the Game");
+    }
 }
 
